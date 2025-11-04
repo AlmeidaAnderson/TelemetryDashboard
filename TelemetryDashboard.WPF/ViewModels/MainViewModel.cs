@@ -68,7 +68,9 @@ namespace TelemetryDashboard.ViewModels
             // Initialize
             RefreshPorts();
             AddStatusMessage("Application started");
-            LoadRecentData();
+
+            // Load recent data asynchronously (fire-and-forget is acceptable for initialization)
+            _ = LoadRecentData();
         }
 
         [RelayCommand]
@@ -159,7 +161,7 @@ namespace TelemetryDashboard.ViewModels
         }
 
         [RelayCommand]
-        private async void ClearAllData()
+        private async Task ClearAllData()
         {
             var result = MessageBox.Show(
                 "Are you sure you want to delete all stored telemetry data? This cannot be undone.",
@@ -176,7 +178,7 @@ namespace TelemetryDashboard.ViewModels
         }
 
         [RelayCommand]
-        private async void ExportToJson()
+        private async Task ExportToJson()
         {
             var saveDialog = new Microsoft.Win32.SaveFileDialog
             {
@@ -195,7 +197,7 @@ namespace TelemetryDashboard.ViewModels
         }
 
         [RelayCommand]
-        private async void ExportToCsv()
+        private async Task ExportToCsv()
         {
             var saveDialog = new Microsoft.Win32.SaveFileDialog
             {
@@ -228,7 +230,7 @@ namespace TelemetryDashboard.ViewModels
         }
 
         [RelayCommand]
-        private async void LoadRecentData()
+        private async Task LoadRecentData()
         {
             var recentData = await _storageService.GetRecentTelemetryAsync(MaxDisplayRecords);
             TotalRecordsCount = await _storageService.GetTelemetryCountAsync();

@@ -21,8 +21,8 @@ namespace TelemetryDashboard.Services
         public event EventHandler<string>? ErrorOccurred;
         public event EventHandler<string>? StatusChanged;
 
-        public string PortName { get; private set; }
-        public int BaudRate { get; private set; }
+        public string PortName { get; set; }
+        public int BaudRate { get; set; }
         public bool IsConnected => _serialPort?.IsOpen ?? false;
         public bool UseAsciiMode { get; set; } = true;
 

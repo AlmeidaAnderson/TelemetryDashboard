@@ -19,7 +19,9 @@ namespace TelemetryDashboard.Services
         // Vehicle configuration (should be loaded from setup)
         private float _vehicleMass = 600f;  // kg
         private float _fuelTankCapacity = 50f;  // liters
+#pragma warning disable CS0414 // Field is assigned but never used - reserved for future fuel density calculations
         private float _fuelDensity = 0.75f;  // kg/L
+#pragma warning restore CS0414
         private float _frontalArea = 1.5f;  // m²
         private float _dragCoefficient = 0.3f;
         private float _wheelbase = 2.5f;  // meters
