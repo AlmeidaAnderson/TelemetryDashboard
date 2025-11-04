@@ -1,18 +1,51 @@
 # Telemetry Dashboard
 
-A comprehensive telemetry data acquisition and visualization system consisting of a Python serial port reader (reference) and a C# WPF application for real-time monitoring and data storage.
+A professional-grade telemetry data acquisition and analysis system with commercial datalogger features inspired by MoTeC i2 and AiM Race Studio. Includes comprehensive data acquisition, lap timing, driver coaching, and advanced analytics.
 
 ## Overview
 
-This project provides tools for reading telemetry data from serial ports, visualizing it in real-time, and storing it for later analysis. It includes:
+This project provides a complete motorsport telemetry solution for reading, analyzing, and visualizing telemetry data. It includes:
 
 1. **Python Reference Implementation** (`telemetry_service.py`) - Serial port reader with data decoding
-2. **C# WPF Application** - Full-featured dashboard with GUI, real-time display, and data storage
+2. **C# WPF Application** - Full-featured professional dashboard with:
+   - 90+ telemetry channels
+   - 60+ derived/calculated channels
+   - Automatic lap timing and sector analysis
+   - GPS track mapping
+   - Driver coaching tools
+   - Professional export formats (MoTeC CSV, AiM CSV)
+
+## 🏎️ Commercial Datalogger Features
+
+This system implements features found in professional motorsport dataloggers. See [FEATURES.md](FEATURES.md) for complete documentation.
+
+### Core Capabilities
+- **Comprehensive Data Acquisition**: GPS, IMU, engine, wheel speeds, driver inputs, suspension, tires, aerodynamics
+- **Derived Channels Engine**: 60+ calculated channels including G-forces, slip angles, fuel consumption, power/torque
+- **Lap Timing System**: Automatic lap detection, sector timing, predictive lap times, delta calculations
+- **Track Mapping**: GPS-based track maps, corner detection, racing line analysis, speed heatmaps
+- **Driver Coaching**: Braking analysis, corner performance breakdown, consistency scoring, personalized recommendations
+- **Professional Exports**: MoTeC i2 CSV, AiM CSV, PDF reports, detailed JSON, GPX tracks
 
 ## Features
 
-### Telemetry Data
-The system supports the following telemetry parameters:
+### Comprehensive Telemetry Data (90+ Channels)
+
+#### Raw Sensor Inputs
+- **GPS**: Latitude, longitude, speed, heading, altitude, satellite count
+- **IMU**: 3-axis accelerometer & gyroscope (longitudinal, lateral, vertical G)
+- **Engine**: RPM, throttle, manifold pressure, lambda, oil temp/pressure, coolant temp, fuel pressure
+- **Wheel Speeds**: Individual corner speeds (FL, FR, RL, RR)
+- **Driver Inputs**: Brake %, throttle %, steering angle, clutch, gear position
+- **Digital Events**: Traction control, ABS, launch control, DRS flags
+- **Suspension**: Travel for all 4 corners
+- **Tires**: Pressure & temperature for all 4 corners
+- **Brakes**: Temperature & pressure for all corners
+- **Aerodynamics**: Front/rear wing angles, ride heights
+- **Environmental**: Ambient temp, track temp, pressure, humidity
+- **Electrical**: Battery & alternator voltage
+
+#### Legacy Support
 - **Temperature** (°C)
 - **Pressure** (kPa)
 - **Altitude** (m)
