@@ -249,23 +249,23 @@
             <StatusBarItem>
                 <TextBlock>
                     <Run Text="Records in DB:"/>
-                    <Run Text="{Binding TotalRecordsCount}" FontWeight="Bold"/>
+                    <Run Text="{Binding TotalRecordsCount, Mode=OneWay}" FontWeight="Bold"/>
                 </TextBlock>
             </StatusBarItem>
             <Separator/>
             <StatusBarItem>
                 <TextBlock>
                     <Run Text="Display:"/>
-                    <Run Text="{Binding TelemetryList.Count}" FontWeight="Bold"/>
+                    <Run Text="{Binding TelemetryList.Count, Mode=OneWay}" FontWeight="Bold"/>
                     <Run Text="/"/>
-                    <Run Text="{Binding MaxDisplayRecords}"/>
+                    <Run Text="{Binding MaxDisplayRecords, Mode=OneWay}"/>
                 </TextBlock>
             </StatusBarItem>
             <Separator/>
             <StatusBarItem>
                 <TextBlock>
                     <Run Text="Status:"/>
-                    <Run Text="{Binding IsReading, Converter={StaticResource StatusTextConverter}}" FontWeight="Bold"/>
+                    <Run Text="{Binding IsReading, Converter={StaticResource StatusTextConverter}, Mode=OneWay}" FontWeight="Bold"/>
                 </TextBlock>
             </StatusBarItem>
         </StatusBar>
