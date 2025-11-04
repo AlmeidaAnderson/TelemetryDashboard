@@ -6,7 +6,7 @@
     <UseWPF>true</UseWPF>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>app.ico</ApplicationIcon>
+    <!-- <ApplicationIcon>app.ico</ApplicationIcon> -->
     <AssemblyName>TelemetryDashboard</AssemblyName>
   </PropertyGroup>
 
